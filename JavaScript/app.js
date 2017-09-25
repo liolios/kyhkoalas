@@ -17,7 +17,7 @@ document.getElementById('submitMessage').onclick = function(){
 	request.send(JSON.stringify(newMessage));
 }
 if(userName){
-	setInterval(function(){getMessages();}, 2000);
+	setInterval(function(){getMessages();}, 1000);
 }
 function getMessages(){
 	const request = new XMLHttpRequest();
