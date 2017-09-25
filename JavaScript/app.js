@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000';
+const url = 'http://10.7.2.26:3000';
 
 let userName = prompt("Whats your name?");
 
@@ -6,9 +6,9 @@ let userName = prompt("Whats your name?");
 document.getElementById('submitMessage').onclick = function(){
 	let	tempMessage = document.getElementById("message").value;
 	let d = new Date();
-	let time = d.getHours() + ":" + d.getMinutes();	
+	let time = d.getHours() + ":" + d.getMinutes();
 	let newMessage = {
-		userName: userName, 
+		userName: userName,
 		message: tempMessage,
 		time: time
 	};
