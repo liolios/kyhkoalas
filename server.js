@@ -10,12 +10,14 @@ server.listen(server_port, function(){
 
 function requestHandler(request, response){
   response.setHeader('Access-Control-Allow-Origin', '*');
-  console.log('1');
+
   if(request.method === 'GET'){
-      console.log('2');
+
   }else if(request.method === 'POST'){
-      console.log('3');
-      console.log(JSON.parse(response).userName);
-    //  messages.push(JSON.parse(response));
+      request.on('data', (data) => {
+        console.log(JSON.parse(data));
+      });
+      response.end();
+
   }
 }
