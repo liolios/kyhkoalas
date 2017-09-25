@@ -23,3 +23,18 @@
 .dropdown li {
     float: left;
 }
+.Message h3{
+    font-size: 15px;
+    width: 40px;
+    background-color: yellow;
+    display: inline;
+}
+.Message p {
+    font-size: 15px;
+    width: 200px;
+    display: inline-block;
+    background-color: white;
+}
+.Message span{
+    background-color: brown;
+}
