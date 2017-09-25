@@ -23,6 +23,9 @@
 .dropdown li {
     float: left;
 }
+.Message {
+    margin-top: 0px;
+}
 .Message h3{
     font-size: 15px;
     width: 40px;
@@ -32,6 +35,8 @@
 .Message p {
     font-size: 15px;
     width: 200px;
+    height: 15px;
+    margin: 0;
     display: inline-block;
     background-color: white;
 }
