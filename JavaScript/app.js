@@ -17,3 +17,17 @@ document.getElementById('submitMessage').onclick = function(){
 	request.open('POST', url);
 	request.send(JSON.stringify(newMessage));
 }
+if(userName){
+	console.log('username is set to' + " " + userName);
+	setInterval(function(){getMessages();}, 2000);
+}
+function getMessages(){
+	const request = new XMLHttpRequest();
+	request.onreadystatechange = function(request, response){
+		if(request.readyState === XMLHttpRequest.DONE){
+			console.log(JSON.parse(request.response));
+		}
+	}
+	request.open('GET', url);
+	request.send();
+}
