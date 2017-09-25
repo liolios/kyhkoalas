@@ -24,7 +24,11 @@ function getMessages(){
 	const request = new XMLHttpRequest();
 	request.onreadystatechange = function(req, response){
 		if(request.readyState === XMLHttpRequest.DONE){
-			tempMessageArray = JSON.parse(request.response);
+			let tempMessagesArray = JSON.parse(request.response);
+			let tempMessagesLength = tempMessagesArray.length;
+			for(let x = 0; x < tempMessagesLength; x++){
+				document.getElementsByClassName('AllMessages').innerHTML += '<div class="Messages"><h3>'+ tempMessagesArray[x].userName + '</h3><p>' + tempMessagesArray[x].message + '</p><span>' + tempMessagesArray[x].time + '</span></div>';
+			}
 		}
 	}
 	request.open('GET', url);
