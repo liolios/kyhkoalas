@@ -16,8 +16,9 @@ function requestHandler(request, response){
     response.end(JSON.stringify(messages));
   }else if(request.method === 'POST'){
       request.on('data', (data) => {
-        console.log(JSON.parse(data));
+
         messages.push(JSON.parse(data));
+        console.log(messages);
       });
       response.end();
 
