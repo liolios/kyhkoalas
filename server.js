@@ -13,6 +13,6 @@ function requestHandler(request, response){
   if(request.method === 'GET'){
 
   }else if(request.method === 'POST'){
-      messages.push(JSON.decode(response));
+      messages.push(JSON.parse(response));
   }
 }
