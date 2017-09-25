@@ -1,7 +1,9 @@
 const url = 'http://10.7.2.26:3000';
 
 let userName = prompt("Whats your name?");
-
+while(userName === null){
+	userName = prompt("Please enter your name to use the chat.");
+}
 
 document.getElementById('submitMessage').onclick = function(){
 	let	tempMessage = document.getElementById("message").value;
