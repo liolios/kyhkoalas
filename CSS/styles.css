@@ -5,8 +5,8 @@
     grid-template-rows: 5;
 }
 .messageBox {
-    height: 200px;
-    width: 400px;
+    height: 400px;
+    width: 1200px;
     background-color: #E7E3E3;
     border: 0.5px solid #000000;
     float: left;
@@ -14,9 +14,12 @@
     margin-top: 10px;
 }
 .dropdown {
-    width:83%;
-    float: right;
+    width: 80px;
     background-color: red;
-    height: 20px;
     display: inline-block;
+    list-style-type: none;
+    overflow-x: scroll;
+}
+.dropdown li {
+    float: left;
 }
