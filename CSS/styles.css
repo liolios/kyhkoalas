@@ -1,10 +1,6 @@
 /*styles for index.html*/
-<<<<<<< HEAD
-.allMessages {
-=======
 
 .AllMessages {
->>>>>>> bf75aa81821c26d52fbb70a062e792cf59dafd57
     grid-template-columns: 3;
     grid-template-rows: 5;
 }
@@ -18,11 +14,6 @@
     margin-top: 10px;
 }
 .dropdown {
-<<<<<<< HEAD
-    
-
-}
-=======
     width: 80px;
     background-color: red;
     display: inline-block;
@@ -32,4 +23,18 @@
 .dropdown li {
     float: left;
 }
->>>>>>> bf75aa81821c26d52fbb70a062e792cf59dafd57
+.Message h3{
+    font-size: 15px;
+    width: 40px;
+    background-color: yellow;
+    display: inline;
+}
+.Message p {
+    font-size: 15px;
+    width: 200px;
+    display: inline-block;
+    background-color: white;
+}
+.Message span{
+    background-color: brown;
+}
