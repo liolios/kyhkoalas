@@ -7,7 +7,6 @@ document.getElementById('submitMessage').onclick = function(){
 	let	tempMessage = document.getElementById("message").value;
 	let d = new Date();
 	let time = d.getHours() + ":" + d.getMinutes();	
-	alert(tempMessage);
 	let newMessage = {
 		userName: userName, 
 		message: tempMessage,
@@ -26,8 +25,9 @@ function getMessages(){
 		if(request.readyState === XMLHttpRequest.DONE){
 			let tempMessagesArray = JSON.parse(request.response);
 			let tempMessagesLength = tempMessagesArray.length;
+			document.getElementById('relevant').innerHTML = "";
 			for(let x = 0; x < tempMessagesLength; x++){
-				document.getElementsByClassName('AllMessages').innerHTML += '<div class="Messages"><h3>'+ tempMessagesArray[x].userName + '</h3><p>' + tempMessagesArray[x].message + '</p><span>' + tempMessagesArray[x].time + '</span></div>';
+				document.getElementById('relevant').innerHTML += '<div class="Message"><h3>'+ tempMessagesArray[x].userName + '</h3><p>' + tempMessagesArray[x].message + '</p><span>' + tempMessagesArray[x].time + '</span></div>';
 			}
 		}
 	}
