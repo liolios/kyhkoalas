@@ -1,8 +1,22 @@
 /*styles for index.html*/
 
 .allMessages {
-    background-color: #E7E3E3;
+    grid-template-columns: 3;
+    grid-template-rows: 5;
+}
+.messageBox {
     height: 200px;
     width: 400px;
+    background-color: #E7E3E3;
     border: 0.5px solid #000000;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.dropdown {
+    width:83%;
+    float: right;
+    background-color: red;
+    height: 20px;
+    display: inline-block;
 }
