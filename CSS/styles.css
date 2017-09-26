@@ -26,21 +26,20 @@
 }
 .Message {
     margin-top: 0px;
+    margin-left: 10px;
 }
 .Message h3{
     font-size: 15px;
-    width: 40px;
-    background-color: yellow;
-    display: inline;
+    width: 600px;
+    margin-bottom: 3px; 
 }
 .Message p {
     font-size: 15px;
-    width: 200px;
-    height: 15px;
+    width: 600px;
     margin: 0;
     display: inline-block;
-    background-color: white;
+
 }
 .Message span{
-    background-color: brown;
+    font-size: 10px;
 }
