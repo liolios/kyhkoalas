@@ -1,7 +1,7 @@
 const url = 'http://10.7.2.26:3000';
 
 let userName = prompt("Whats your name?");
-while(userName === null){
+while(userName == null || typeof variable === 'undefined'){
 	userName = prompt("Please enter your name to use the chat.");
 }
 
