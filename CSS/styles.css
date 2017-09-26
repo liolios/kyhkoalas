@@ -18,7 +18,8 @@ h3 {
     overflow-y: scroll;
 }
 .useronlinewrapper {
-    width:29%;
+    width:28%;
+    float: left;
 }
 .onlinebox{
     height: 400px;
@@ -64,13 +65,13 @@ h3 {
 .wrapper {
     width: 71%;
 }
-form {
+.form {
     width: 100%;
     display: inline-flex;
 }
-input:first-child {
+.input#message {
     width: 90%;
 }
-input:nth-child(2){
+.input#submitMessage{
     width: 10%;
 }
