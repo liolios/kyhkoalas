@@ -29,7 +29,7 @@ function getMessages(){
 			let tempMessagesLength = tempMessagesArray.length;
 			document.getElementById('relevant').innerHTML = "";
 			for(let x = 0; x < tempMessagesLength; x++){
-				document.getElementById('relevant').innerHTML += '<div class="Message"><h3>'+ tempMessagesArray[x].userName + '</h3><p>' + tempMessagesArray[x].message + '</p><span>' + tempMessagesArray[x].time + '</span></div>';
+				document.getElementById('relevant').innerHTML += '<div class="Message"><p class ="time">' + tempMessagesArray[x].time + '</p><h3>'+ tempMessagesArray[x].userName + '</h3><p>' + tempMessagesArray[x].message + '</p></div>';
 			}
 		}
 	}
