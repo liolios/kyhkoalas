@@ -1,15 +1,16 @@
-const url = 'http://localhost:3000';
+const url = 'http://10.7.2.26:3000';
 
 let userName = prompt("Whats your name?");
-
+while(userName == null){
+	userName = prompt("Please enter your name to use the chat.");
+}
 
 document.getElementById('submitMessage').onclick = function(){
 	let	tempMessage = document.getElementById("message").value;
 	let d = new Date();
-	let time = d.getHours() + ":" + d.getMinutes();	
-	alert(tempMessage);
+	let time = d.getHours() + ":" + d.getMinutes();
 	let newMessage = {
-		userName: userName, 
+		userName: userName,
 		message: tempMessage,
 		time: time
 	};
@@ -18,13 +19,18 @@ document.getElementById('submitMessage').onclick = function(){
 	request.send(JSON.stringify(newMessage));
 }
 if(userName){
-	setInterval(function(){getMessages();}, 2000);
+	setInterval(function(){getMessages();}, 1000);
 }
 function getMessages(){
 	const request = new XMLHttpRequest();
 	request.onreadystatechange = function(req, response){
 		if(request.readyState === XMLHttpRequest.DONE){
-			tempMessageArray = JSON.parse(request.response);
+			let tempMessagesArray = JSON.parse(request.response);
+			let tempMessagesLength = tempMessagesArray.length;
+			document.getElementById('relevant').innerHTML = "";
+			for(let x = 0; x < tempMessagesLength; x++){
+				document.getElementById('relevant').innerHTML += '<div class="Message"><h3>'+ tempMessagesArray[x].userName + '</h3><p>' + tempMessagesArray[x].message + '</p><span>' + tempMessagesArray[x].time + '</span></div>';
+			}
 		}
 	}
 	request.open('GET', url);
