@@ -1,15 +1,8 @@
 const url = 'http://10.7.2.30:3000';
 //let users = getUsers();
 let isValid = false;
-let users = [];
 let userName;
-
-function sendUserName(namn){
-  console.log('4');
-  const xml =  new XMLHttpRequest();
-  xml.open('POST', 'http://localhost:3000/postUser');
-  xml.send(JSON.stringify(namn));
-}
+let users = [];
 
 while(!isValid){
 	 userName = prompt("Whats your name?");
@@ -37,6 +30,7 @@ while(!isValid){
 
 document.getElementById('submitMessage').onclick = function(){
 	let	tempMessage = document.getElementById("message").value;
+	document.getElementById("message").value = "";
 	let d = new Date();
 	let time = d.getHours() + ":" + d.getMinutes();
 	let newMessage = {
@@ -44,7 +38,6 @@ document.getElementById('submitMessage').onclick = function(){
 		message: tempMessage,
 		time: time
 	};
-	document.getElementById("message").value = "";
 	const request = new XMLHttpRequest();
 	request.open('POST', url + '/postMessage');
 	request.send(JSON.stringify(newMessage));
@@ -59,7 +52,7 @@ if(userName){
 function sendUserName(userName)
 {
 	const request = new XMLHttpRequest();
-	request.open("POST", url);
+	request.open('POST', url + '/postUser');
 	request.send(JSON.stringify(userName));
 }
 function getUsers()
