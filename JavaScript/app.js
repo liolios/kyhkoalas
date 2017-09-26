@@ -24,6 +24,7 @@ while(!isValid){
 
 document.getElementById('submitMessage').onclick = function(){
 	let	tempMessage = document.getElementById("message").value;
+	document.getElementById("message").value = "";
 	let d = new Date();
 	let time = d.getHours() + ":" + d.getMinutes();
 	let newMessage = {
@@ -31,7 +32,6 @@ document.getElementById('submitMessage').onclick = function(){
 		message: tempMessage,
 		time: time
 	};
-	document.getElementById("message").value = "";
 	const request = new XMLHttpRequest();
 	request.open('POST', url);
 	request.send(JSON.stringify(newMessage));
