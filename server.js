@@ -13,7 +13,7 @@ function requestHandler(request, response){
   response.setHeader('Access-Control-Allow-Origin', '*');
 
   if(request.method === 'GET'){
-    if(request.url === '/getPersonOnline'){
+    if(request.url === '/getUsersOnline'){
       response.setHeader('Content-Type', 'Application/JSON;');
       response.end(JSON.stringify(usersOnline));
     }else if(request.url === '/getMessages'){

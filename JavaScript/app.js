@@ -17,13 +17,9 @@ while(!isValid){
 	}
 	else
 	{
-		console.log('1');
 		isValid = true;
-		console.log('2');
 		sendUserName(userName);
-		console.log('3');
-	}
-
+		}
 }
 
 
@@ -46,7 +42,7 @@ document.getElementById('submitMessage').onclick = function(){
 
 if(userName){
 	setInterval(function(){getMessages();}, 1000);
-
+	setInterval(function(){getUsers();}, 1500);
 }
 
 function sendUserName(userName)
@@ -62,12 +58,16 @@ function getUsers()
 	{
 		if(request.readyState === XMLHttpRequest.DONE)
 		{
-			let tempUsers = JSON.parse(request.response);
+			users = JSON.parse(request.response);
 		}
 	}
 	request.open("GET", url + "/getUsersOnline");
 	request.send();
-	return tempUsers;
+	printOnlineUsers();
+}
+
+function printOnlineUsers(){
+
 }
 
 function getMessages(){
