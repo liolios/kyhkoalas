@@ -1,7 +1,8 @@
-const url = 'http://10.7.2.26:3000';
+const url = 'http://10.7.2.30:3000';
 //let users = getUsers();
 let isValid = false;
-
+let userName;
+let users = [];
 while(!isValid){
 	let userName = prompt("Whats your name?");
 
@@ -9,7 +10,7 @@ while(!isValid){
 	{
 		userName = prompt("Please enter your name to use the chat.");
 	}
-	else if(!users.indexOf(usernName))
+	else if(!users.indexOf(userName))
 	{
 			alert("Username is taken, choose another one!");
 	}
@@ -34,7 +35,7 @@ document.getElementById('submitMessage').onclick = function(){
 	const request = new XMLHttpRequest();
 	request.open('POST', url);
 	request.send(JSON.stringify(newMessage));
-	
+
 }
 if(userName){
 	setInterval(function(){getMessages();}, 1000);
@@ -42,7 +43,7 @@ if(userName){
 function sendUserName(userName)
 {
 	const request = new XMLHttpRequest();
-	request.open("POST", url);
+	request.open('POST', url + '/postUser');
 	request.send(JSON.stringify(userName));
 }
 function getUsers()
@@ -72,6 +73,6 @@ function getMessages(){
 			}
 		}
 	}
-	request.open('GET', url);
+	request.open('GET', url + '/getMessages');
 	request.send();
 }
