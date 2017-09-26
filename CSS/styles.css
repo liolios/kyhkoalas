@@ -76,3 +76,7 @@ input#message {
 input#submitMessage{
     width: 10%;
 }
+.onlinebox p {
+    text-align: center;
+    font-size: 40px;
+}
