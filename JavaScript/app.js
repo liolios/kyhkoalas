@@ -1,4 +1,4 @@
-const url = 'http://10.7.2.30:3000';
+const url = 'http://172.20.10.2:3000';
 //let users = getUsers();
 let isValid = false;
 let userName;
@@ -70,7 +70,7 @@ function printOnlineUsers(){
 	let onlineLength = users.length;
 	document.getElementById('online').innerHTML = '';
 	for(let x = 0; x < onlineLength; x++){
-		document.getElementById('online').innerHTML += '<p>'+users[x]+'</p>';
+		document.getElementById('online').innerHTML += '<div class="useronlinerow"><span class="online"></span><p>'+users[x]+'</p></div>';
 	}
 }
 
@@ -83,9 +83,9 @@ function getMessages(){
 			document.getElementById('relevant').innerHTML = "";
 			for(let x = 0; x < tempMessagesLength; x++){
 				if(tempMessagesArray[x - 1] === undefined || tempMessagesArray[x - 1].userName != tempMessagesArray[x].userName){
-					document.getElementById('relevant').innerHTML += '<div class="Message"><p class ="time">' + tempMessagesArray[x].time + '</p><h3>'+ tempMessagesArray[x].userName + '</h3><p>' + tempMessagesArray[x].message + '</p></div>';
+					document.getElementById('relevant').innerHTML += '<div class="Message"><p class ="time">' + tempMessagesArray[x].time + '</p><h3>'+ tempMessagesArray[x].userName + '</h3><p class="textmessage"> - ' + tempMessagesArray[x].message + '</p></div>';
 				}else{
-					document.getElementById('relevant').innerHTML += '<div class="Message"><p class ="time">' + tempMessagesArray[x].time + '</p><p>' + tempMessagesArray[x].message + '</p></div>';
+					document.getElementById('relevant').innerHTML += '<div class="Message"><p class ="time">' + tempMessagesArray[x].time + '</p><p class="textmessage"> - ' + tempMessagesArray[x].message + '</p></div>';
 				}
 			}
 		}
