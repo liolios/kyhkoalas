@@ -95,7 +95,7 @@ p.time {
     font-size: 35px;
     float: left;
     display: inline-flex;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 .onlinebox p {
     font-size: 40px;
@@ -106,7 +106,7 @@ p.time {
 .useronlinerow {
     height: 70px;
     width: 100%;
-    margin-left: 10px;
+    margin-left: 15px;
     padding: auto;
     display: inline-flex;
     align-items: center;
