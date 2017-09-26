@@ -1,5 +1,5 @@
-const url = 'http://10.7.2.26:3000';
-
+const url = 'http://172.20.10.5:3000';
+    
 let userName = prompt("Whats your name?");
 while(userName == null){
 	userName = prompt("Please enter your name to use the chat.");
@@ -14,9 +14,11 @@ document.getElementById('submitMessage').onclick = function(){
 		message: tempMessage,
 		time: time
 	};
+	document.getElementById("message").value = "";
 	const request = new XMLHttpRequest();
 	request.open('POST', url);
 	request.send(JSON.stringify(newMessage));
+	
 }
 if(userName){
 	setInterval(function(){getMessages();}, 1000);
