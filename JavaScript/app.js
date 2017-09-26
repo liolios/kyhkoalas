@@ -1,8 +1,24 @@
-const url = 'http://172.20.10.5:3000';
-    
-let userName = prompt("Whats your name?");
-while(userName == null){
-	userName = prompt("Please enter your name to use the chat.");
+const url = 'http://10.7.2.26:3000';
+//let users = getUsers();
+let isValid = false;
+
+while(!isValid){
+	let userName = prompt("Whats your name?");
+
+	if(userName == null || userName == undefined)
+	{
+		userName = prompt("Please enter your name to use the chat.");
+	}
+	else if(!users.indexOf(usernName))
+	{
+			alert("Username is taken, choose another one!");
+	}
+	else
+	{
+		isValid = true;
+		sendUserName(userName);
+	}
+
 }
 
 document.getElementById('submitMessage').onclick = function(){
@@ -23,6 +39,27 @@ document.getElementById('submitMessage').onclick = function(){
 if(userName){
 	setInterval(function(){getMessages();}, 1000);
 }
+function sendUserName(userName)
+{
+	const request = new XMLHttpRequest();
+	request.open("POST", url);
+	request.send(JSON.stringify(userName));
+}
+function getUsers()
+{
+	const request = new XMLHttpRequest();
+	request.onreadystatechange = function(req, response)
+	{
+		if(request.readyState === XMLHttpRequest.DONE)
+		{
+			let tempUsers = JSON.parse(request.response);
+		}
+	}
+	request.open("GET", url + "/getUsersOnline");
+	request.send();
+	return tempUsers;
+}
+
 function getMessages(){
 	const request = new XMLHttpRequest();
 	request.onreadystatechange = function(req, response){
