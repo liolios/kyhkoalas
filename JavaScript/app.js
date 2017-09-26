@@ -67,7 +67,11 @@ function getUsers()
 }
 
 function printOnlineUsers(){
-
+	let onlineLength = users.length;
+	document.getElementById('online').innerHTML = '';
+	for(let x = 0; x < onlineLength; x++){
+		document.getElementById('online').innerHTML += '<p>'+users[x]+'</p>';
+	}
 }
 
 function getMessages(){
