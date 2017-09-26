@@ -1,5 +1,8 @@
 /*styles for index.html*/
 
+h3 {
+    color: red;
+}
 .AllMessages {
     grid-template-columns: 3;
     grid-template-rows: 5;
@@ -42,4 +45,18 @@
 }
 .Message span{
     font-size: 10px;
+}
+
+.wrapper {
+    height: auto;
+}
+form {
+    width: 100%;
+    display: inline-flex;
+}
+input:first-child {
+    width: 90%;
+}
+input:nth-child(2){
+    width: 10%;
 }
