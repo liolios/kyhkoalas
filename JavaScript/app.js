@@ -7,7 +7,7 @@ let users = [];
 while(!isValid){
 	 userName = prompt("Whats your name?");
 
-	if(userName == null || userName == undefined)
+	if(userName == '')
 	{
 		userName = prompt("Please enter your name to use the chat.");
 	}
