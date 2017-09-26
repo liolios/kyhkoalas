@@ -68,10 +68,11 @@ h3 {
 .form {
     width: 100%;
     display: inline-flex;
+    padding-right:7px;
 }
-.input#message {
+input#message {
     width: 90%;
 }
-.input#submitMessage{
+input#submitMessage{
     width: 10%;
 }
