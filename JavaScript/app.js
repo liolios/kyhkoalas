@@ -82,7 +82,11 @@ function getMessages(){
 			let tempMessagesLength = tempMessagesArray.length;
 			document.getElementById('relevant').innerHTML = "";
 			for(let x = 0; x < tempMessagesLength; x++){
-				document.getElementById('relevant').innerHTML += '<div class="Message"><p class ="time">' + tempMessagesArray[x].time + '</p><h3>'+ tempMessagesArray[x].userName + '</h3><p>' + tempMessagesArray[x].message + '</p></div>';
+				if(tempMessagesArray[x - 1] === undefined || tempMessagesArray[x - 1].userName != tempMessagesArray[x].userName){
+					document.getElementById('relevant').innerHTML += '<div class="Message"><p class ="time">' + tempMessagesArray[x].time + '</p><h3>'+ tempMessagesArray[x].userName + '</h3><p>' + tempMessagesArray[x].message + '</p></div>';
+				}else{
+					document.getElementById('relevant').innerHTML += '<div class="Message"><p class ="time">' + tempMessagesArray[x].time + '</p><p>' + tempMessagesArray[x].message + '</p></div>';
+				}
 			}
 		}
 	}
