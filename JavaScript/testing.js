@@ -4,9 +4,11 @@ window.onbeforeunload = function(e){
   xml.send();
 }
 
-
+/*
 function sendUserName(namn){
+  console.log('1');
   const xml =  new XMLHttpRequest();
   xml.open('POST', 'http://localhost:3000/postUser');
   xml.send(namn);
 }
+*/

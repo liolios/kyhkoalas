@@ -1,25 +1,39 @@
-const url = 'http://10.7.2.26:3000';
+const url = 'http://10.7.2.30:3000';
 //let users = getUsers();
 let isValid = false;
+let users = [];
+let userName;
+
+function sendUserName(namn){
+  console.log('4');
+  const xml =  new XMLHttpRequest();
+  xml.open('POST', 'http://localhost:3000/postUser');
+  xml.send(JSON.stringify(namn));
+}
 
 while(!isValid){
-	let userName = prompt("Whats your name?");
+	 userName = prompt("Whats your name?");
 
 	if(userName == null || userName == undefined)
 	{
 		userName = prompt("Please enter your name to use the chat.");
 	}
-	else if(!users.indexOf(usernName))
+	else if(!users.indexOf(userName))
 	{
 			alert("Username is taken, choose another one!");
 	}
 	else
 	{
+		console.log('1');
 		isValid = true;
+		console.log('2');
 		sendUserName(userName);
+		console.log('3');
 	}
 
 }
+
+
 
 document.getElementById('submitMessage').onclick = function(){
 	let	tempMessage = document.getElementById("message").value;
@@ -32,13 +46,16 @@ document.getElementById('submitMessage').onclick = function(){
 	};
 	document.getElementById("message").value = "";
 	const request = new XMLHttpRequest();
-	request.open('POST', url);
+	request.open('POST', url + '/postMessage');
 	request.send(JSON.stringify(newMessage));
-	
+
 }
+
 if(userName){
 	setInterval(function(){getMessages();}, 1000);
+
 }
+
 function sendUserName(userName)
 {
 	const request = new XMLHttpRequest();
@@ -72,6 +89,6 @@ function getMessages(){
 			}
 		}
 	}
-	request.open('GET', url);
+	request.open('GET', url + '/getMessages');
 	request.send();
 }
