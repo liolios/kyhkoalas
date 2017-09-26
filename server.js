@@ -27,14 +27,15 @@ function requestHandler(request, response){
         });
       }else if(request.url === '/postUser'){
         request.on('data', (data) => {
-          usersOnline.push(data);
+          usersOnline.push(JSON.parse(data));
           console.log(usersOnline);
         });
       }else if(request.url === '/deleteUser'){
         request.on('data', (data) => {
-          let index = usersOnline.indexOf(data);
+          let index = usersOnline.indexOf(JSON.parse(data));
           if(index === -1){}else{
             usersOnline.splice(index, 1);
+            console.log(usersOnline);
           }
         });
       }

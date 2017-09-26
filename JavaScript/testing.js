@@ -1,7 +1,7 @@
 window.onbeforeunload = function(e){
   const xml =  new XMLHttpRequest();
-  xml.open('GET', 'http://localhost:3000/closing');
-  xml.send();
+  xml.open('POST', 'http://localhost:3000/deleteUser');
+  xml.send(JSON.stringify(userName));
 }
 
 /*
